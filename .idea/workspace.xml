@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7293ae97-3c8d-47c6-9676-744088442cbe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/TestVisioPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/NetWork/ClientDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/NetWork/ServerDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/TestBufferReadWrite.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/ByteBuffer/TestBufferReadWrite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/TestByteAllocate.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/ByteBuffer/TestByteAllocate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/TestByteBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/ByteBuffer/TestByteBuffer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/TestTranslateString.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/ByteBuffer/TestTranslateString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/TestVisioPacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/ByteBuffer/TestVisioPacket.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,29 +105,32 @@
       <recent name="bakazhou" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.TestVisioPacket.testVisioPacket">
-    <configuration name="TestBufferReadWrite.name" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":NettyDemo:test" />
-            <option value="--tests" />
-            <option value="&quot;com.cn.tw.graduate.bakazhou.TestBufferReadWrite.name&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
+  <component name="RunManager" selected="Application.ClientDemo">
+    <configuration name="ClientDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.NetWork.ClientDemo" />
+      <module name="JUC.NettyDemo.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cn.tw.graduate.bakazhou.NetWork.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.NetWork.ServerDemo" />
+      <module name="JUC.NettyDemo.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cn.tw.graduate.bakazhou.NetWork.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="TestBufferReadWrite.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -137,29 +146,6 @@
             <option value=":NettyDemo:test" />
             <option value="--tests" />
             <option value="&quot;com.cn.tw.graduate.bakazhou.TestBufferReadWrite.test&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="TestByteBuffer" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":NettyDemo:test" />
-            <option value="--tests" />
-            <option value="&quot;com.cn.tw.graduate.bakazhou.TestByteBuffer&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -217,11 +203,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ClientDemo" />
+        <item itemvalue="Application.ServerDemo" />
         <item itemvalue="Gradle.TestVisioPacket.testVisioPacket" />
         <item itemvalue="Gradle.TestBufferReadWrite.test" />
         <item itemvalue="Gradle.TestTranslateString.method3" />
-        <item itemvalue="Gradle.TestBufferReadWrite.name" />
-        <item itemvalue="Gradle.TestByteBuffer" />
       </list>
     </recent_temporary>
   </component>
@@ -233,7 +219,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663551233208</updated>
-      <workItem from="1663551235510" duration="9323000" />
+      <workItem from="1663551235510" duration="12374000" />
     </task>
     <task id="LOCAL-00001" summary="feat: project init success">
       <created>1663551542725</created>
@@ -305,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663568151756</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat: add TestVisioPacket">
+      <created>1663571186322</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1663571186322</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,6 +315,7 @@
     <MESSAGE value="feat: update TestBufferReadWrite" />
     <MESSAGE value="feat: add TestByteAllocate" />
     <MESSAGE value="feat: add TestTranslateString" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add TestTranslateString" />
+    <MESSAGE value="feat: add TestVisioPacket" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add TestVisioPacket" />
   </component>
 </project>

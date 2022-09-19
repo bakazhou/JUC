@@ -1,4 +1,4 @@
-package com.cn.tw.graduate.bakazhou;
+package com.cn.tw.graduate.bakazhou.ByteBuffer;
 
 import org.junit.jupiter.api.Test;
 
@@ -29,7 +29,7 @@ public class TestVisioPacket {
                     //取出buffer中的字符，get方法会使position+1
                     builder.append((char)buffer.get());
                 }
-                System.out.println("string:"+builder.toString());
+                System.out.println("string:"+ builder);
             }
         }
         //调用compact，使缓冲区中未读取完的字符不会被清空
