@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7293ae97-3c8d-47c6-9676-744088442cbe" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/ByteBufferUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/TestByteBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/TestByteBuffer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NettyDemo/src/test/resources/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/data.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +21,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -72,8 +74,11 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou" />
+      <recent name="$PROJECT_DIR$/NettyDemo/src" />
+      <recent name="$PROJECT_DIR$/NettyDemo/src/main" />
       <recent name="$PROJECT_DIR$/NettyDemo/src/main/resources" />
+      <recent name="$PROJECT_DIR$/NettyDemo/src/test/resources" />
+      <recent name="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.cn.tw.graduate.bakazhou" />
@@ -158,7 +163,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663551233208</updated>
-      <workItem from="1663551235510" duration="3409000" />
+      <workItem from="1663551235510" duration="4432000" />
     </task>
     <task id="LOCAL-00001" summary="feat: project init success">
       <created>1663551542725</created>
@@ -195,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663554520600</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat: add shouldReturnStringWhenReadData">
+      <created>1663556418540</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1663556418540</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,6 +219,7 @@
     <MESSAGE value="feat: add netty demo module" />
     <MESSAGE value="feat: add TestByteBuffer" />
     <MESSAGE value="feat: add file data.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add file data.txt" />
+    <MESSAGE value="feat: add shouldReturnStringWhenReadData" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add shouldReturnStringWhenReadData" />
   </component>
 </project>
