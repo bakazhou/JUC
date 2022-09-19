@@ -1,2 +1,3 @@
 rootProject.name = 'JUC'
+include 'NettyDemo'
 
