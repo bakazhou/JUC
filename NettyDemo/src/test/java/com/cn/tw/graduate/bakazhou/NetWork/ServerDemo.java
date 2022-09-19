@@ -1,46 +1,55 @@
 package com.cn.tw.graduate.bakazhou.NetWork;
 
-import com.cn.tw.graduate.bakazhou.ByteBufferUtil;
-
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
+import java.nio.channels.SelectionKey;
+import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
-import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Set;
 
 public class ServerDemo {
     public static void main(String[] args) {
-        // 创建缓冲区
+
         ByteBuffer buffer = ByteBuffer.allocate(16);
         // 获得服务器通道
         try(ServerSocketChannel server = ServerSocketChannel.open()) {
-            // 为服务器通道绑定端口
             server.bind(new InetSocketAddress(8080));
-            // 用户存放连接的集合
-            ArrayList<SocketChannel> channels = new ArrayList<>();
-            // 循环接收连接
+            // 创建选择器
+            Selector selector = Selector.open();
+
+            // 通道必须设置为非阻塞模式
+            server.configureBlocking(false);
+            // 将通道注册到选择器中，并设置感兴趣的事件
+            server.register(selector, SelectionKey.OP_ACCEPT);
             while (true) {
-                // 设置为非阻塞模式，没有连接时返回null，不会阻塞线程
-                server.configureBlocking(false);
-                SocketChannel socketChannel = server.accept();
-                System.out.println("before connecting...");
-                // 通道不为空时才将连接放入到集合中
-                if (socketChannel != null) {
-                    System.out.println("after connecting...");
-                    channels.add(socketChannel);
-                }
-                // 循环遍历集合中的连接
-                for(SocketChannel channel : channels) {
-                    // 处理通道中的数据
-                    // 设置为非阻塞模式，若通道中没有数据，会返回0，不会阻塞线程
-                    channel.configureBlocking(false);
-                    int read = channel.read(buffer);
-                    if(read > 0) {
-                        buffer.flip();
-                        ByteBufferUtil.debugRead(buffer);
-                        buffer.clear();
-                        System.out.println("after reading");
+                // 若没有事件就绪，线程会被阻塞，反之不会被阻塞。从而避免了CPU空转
+                // 返回值为就绪的事件个数
+                int ready = selector.select();
+                System.out.println("selector ready counts : " + ready);
+
+                // 获取所有事件
+                Set<SelectionKey> selectionKeys = selector.selectedKeys();
+
+                // 使用迭代器遍历事件
+                Iterator<SelectionKey> iterator = selectionKeys.iterator();
+                while (iterator.hasNext()) {
+                    SelectionKey key = iterator.next();
+
+                    // 判断key的类型
+                    if(key.isAcceptable()) {
+                        // 获得key对应的channel
+                        ServerSocketChannel channel = (ServerSocketChannel) key.channel();
+                        System.out.println("before accepting...");
+
+                        // 获取连接并处理，而且是必须处理，否则需要取消
+                        SocketChannel socketChannel = channel.accept();
+                        System.out.println("after accepting...");
+
+                        // 处理完毕后移除
+                        iterator.remove();
                     }
                 }
             }
