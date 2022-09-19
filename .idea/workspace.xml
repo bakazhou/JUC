@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7293ae97-3c8d-47c6-9676-744088442cbe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/TestTranslateString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/TestVisioPacket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +99,7 @@
       <recent name="bakazhou" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.TestTranslateString.method3">
+  <component name="RunManager" selected="Gradle.TestVisioPacket.testVisioPacket">
     <configuration name="TestBufferReadWrite.name" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -168,29 +169,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TestByteBuffer.shouldReturnStringWhenReadData" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":NettyDemo:test" />
-            <option value="--tests" />
-            <option value="&quot;com.cn.tw.graduate.bakazhou.TestByteBuffer.shouldReturnStringWhenReadData&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="TestTranslateString.method3" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -214,13 +192,36 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="TestVisioPacket.testVisioPacket" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":NettyDemo:test" />
+            <option value="--tests" />
+            <option value="&quot;com.cn.tw.graduate.bakazhou.TestVisioPacket.testVisioPacket&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.TestTranslateString.method3" />
+        <item itemvalue="Gradle.TestVisioPacket.testVisioPacket" />
         <item itemvalue="Gradle.TestBufferReadWrite.test" />
+        <item itemvalue="Gradle.TestTranslateString.method3" />
         <item itemvalue="Gradle.TestBufferReadWrite.name" />
         <item itemvalue="Gradle.TestByteBuffer" />
-        <item itemvalue="Gradle.TestByteBuffer.shouldReturnStringWhenReadData" />
       </list>
     </recent_temporary>
   </component>
@@ -232,7 +233,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663551233208</updated>
-      <workItem from="1663551235510" duration="7193000" />
+      <workItem from="1663551235510" duration="9323000" />
     </task>
     <task id="LOCAL-00001" summary="feat: project init success">
       <created>1663551542725</created>
@@ -297,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663567758076</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="feat: add TestTranslateString">
+      <created>1663568151756</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1663568151756</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,6 +321,7 @@
     <MESSAGE value="feat: add ByteBufferUtil" />
     <MESSAGE value="feat: update TestBufferReadWrite" />
     <MESSAGE value="feat: add TestByteAllocate" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add TestByteAllocate" />
+    <MESSAGE value="feat: add TestTranslateString" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add TestTranslateString" />
   </component>
 </project>
