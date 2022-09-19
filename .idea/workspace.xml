@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7293ae97-3c8d-47c6-9676-744088442cbe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cn/tw/graduate/bakazhou/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/TestByteBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/TestByteBuffer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NettyDemo/src/test/resources/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/data.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +36,13 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
@@ -56,11 +60,29 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Project.color": "000c22",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "jdk.selected.JAVA_MODULE": "11"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou" />
+      <recent name="$PROJECT_DIR$/NettyDemo/src/main/resources" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.cn.tw.graduate.bakazhou" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="bakazhou" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.TestByteBuffer">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.Main" />
       <module name="JUC.main" />
@@ -74,8 +96,56 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestByteBuffer" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":NettyDemo:test" />
+            <option value="--tests" />
+            <option value="&quot;com.cn.tw.graduate.bakazhou.TestByteBuffer&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestByteBuffer.shouldReturnStringWhenReadData" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":NettyDemo:test" />
+            <option value="--tests" />
+            <option value="&quot;com.cn.tw.graduate.bakazhou.TestByteBuffer.shouldReturnStringWhenReadData&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TestByteBuffer" />
+        <item itemvalue="Gradle.TestByteBuffer.shouldReturnStringWhenReadData" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -88,7 +158,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663551233208</updated>
-      <workItem from="1663551235510" duration="1582000" />
+      <workItem from="1663551235510" duration="3409000" />
     </task>
     <task id="LOCAL-00001" summary="feat: project init success">
       <created>1663551542725</created>
@@ -104,7 +174,28 @@
       <option name="project" value="LOCAL" />
       <updated>1663554213884</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: add netty demo module">
+      <created>1663554356056</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1663554356056</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: add TestByteBuffer">
+      <created>1663554469525</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1663554469525</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: add file data.txt">
+      <created>1663554520600</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1663554520600</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,6 +204,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: project init success" />
     <MESSAGE value="feat: add project dependencies" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add project dependencies" />
+    <MESSAGE value="feat: add netty demo module" />
+    <MESSAGE value="feat: add TestByteBuffer" />
+    <MESSAGE value="feat: add file data.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add file data.txt" />
   </component>
 </project>
