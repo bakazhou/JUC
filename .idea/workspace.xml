@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7293ae97-3c8d-47c6-9676-744088442cbe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/Netty/Channel/ChannelClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/Netty/Channel/ChannelServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/Netty/Pipeline/PipeLineServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -155,12 +154,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestEventLoop" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.Netty.EventLoop.TestEventLoop" />
+    <configuration name="PipeLineServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.Netty.Pipeline.PipeLineServer" />
       <module name="JUC.NettyDemo.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.cn.tw.graduate.bakazhou.Netty.EventLoop.*" />
+          <option name="PATTERN" value="com.cn.tw.graduate.bakazhou.Netty.Pipeline.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -170,11 +169,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PipeLineServer" />
         <item itemvalue="Application.ChannelClient" />
         <item itemvalue="Application.ChannelServer" />
         <item itemvalue="Application.EventLoopClient" />
         <item itemvalue="Application.EventLoopServer" />
-        <item itemvalue="Application.TestEventLoop" />
       </list>
     </recent_temporary>
   </component>
@@ -187,7 +186,7 @@
       <option name="presentableId" value="Default" />
       <updated>1663551233208</updated>
       <workItem from="1663551235510" duration="17716000" />
-      <workItem from="1663637188099" duration="11626000" />
+      <workItem from="1663637188099" duration="13234000" />
     </task>
     <task id="LOCAL-00001" summary="feat: project init success">
       <created>1663551542725</created>
@@ -294,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663652676758</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="feat: add ChannelClient">
+      <created>1663656647957</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1663656647957</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,6 +322,7 @@
     <MESSAGE value="feat: add HelloServer and HelloClient" />
     <MESSAGE value="feat: add TestEventLoop" />
     <MESSAGE value="feat: add eventLoopClient &amp; eventLoopServer" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add eventLoopClient &amp; eventLoopServer" />
+    <MESSAGE value="feat: add ChannelClient" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add ChannelClient" />
   </component>
 </project>
