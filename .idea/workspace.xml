@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7293ae97-3c8d-47c6-9676-744088442cbe" name="Changes" comment="feat: add nio service server and client server demo">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/Netty/HelloClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/Netty/HelloServer.java" afterDir="false" />
+    <list default="true" id="7293ae97-3c8d-47c6-9676-744088442cbe" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/Netty/TestEventLoop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/NetWork/ServerDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/NetWork/ServerDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/Netty/HelloClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/Netty/HelloClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,16 +73,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Project.color": "000c22",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "jdk.selected.JAVA_MODULE": "11"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Project.color&quot;: &quot;000c22&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -102,7 +101,7 @@
       <recent name="bakazhou" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HelloClient">
+  <component name="RunManager" selected="Application.TestEventLoop">
     <configuration name="ClientDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.NetWork.ClientDemo" />
       <module name="JUC.NettyDemo.test" />
@@ -142,12 +141,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServerDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.NetWork.ServerDemo" />
+    <configuration name="TestEventLoop" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.Netty.TestEventLoop" />
       <module name="JUC.NettyDemo.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.cn.tw.graduate.bakazhou.NetWork.*" />
+          <option name="PATTERN" value="com.cn.tw.graduate.bakazhou.Netty.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -155,7 +154,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestVisioPacket.testVisioPacket" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestEventLoop.testEventLoop" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -168,7 +167,7 @@
           <list>
             <option value=":NettyDemo:test" />
             <option value="--tests" />
-            <option value="&quot;com.cn.tw.graduate.bakazhou.TestVisioPacket.testVisioPacket&quot;" />
+            <option value="&quot;com.cn.tw.graduate.bakazhou.Netty.TestEventLoop.testEventLoop&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -180,11 +179,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestEventLoop" />
+        <item itemvalue="Gradle.TestEventLoop.testEventLoop" />
         <item itemvalue="Application.HelloClient" />
         <item itemvalue="Application.HelloServer" />
         <item itemvalue="Application.ClientDemo" />
-        <item itemvalue="Application.ServerDemo" />
-        <item itemvalue="Gradle.TestVisioPacket.testVisioPacket" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +195,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663551233208</updated>
-      <workItem from="1663551235510" duration="17411000" />
+      <workItem from="1663551235510" duration="17716000" />
+      <workItem from="1663637188099" duration="4515000" />
     </task>
     <task id="LOCAL-00001" summary="feat: project init success">
       <created>1663551542725</created>
@@ -282,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663574235967</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="feat: add HelloServer and HelloClient">
+      <created>1663581413296</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1663581413296</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,6 +308,7 @@
     <MESSAGE value="feat: add TestTranslateString" />
     <MESSAGE value="feat: add TestVisioPacket" />
     <MESSAGE value="feat: add nio service server and client server demo" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add nio service server and client server demo" />
+    <MESSAGE value="feat: add HelloServer and HelloClient" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add HelloServer and HelloClient" />
   </component>
 </project>

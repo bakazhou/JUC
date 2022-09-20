@@ -17,11 +17,11 @@ public class HelloClient {
                 .channel(NioSocketChannel.class)
                 // ChannelInitializer 处理器（仅执行一次）
                 // 它的作用是待客户端SocketChannel建立连接后，执行initChannel以便添加更多的处理器
-                .handler(new ChannelInitializer<Channel>() {
+                .handler(new ChannelInitializer<>() {
                     @Override
-                    protected void initChannel(Channel channel) throws Exception {
+                    protected void initChannel(Channel ch) throws Exception {
                         // 消息会经过通道 handler 处理，这里是将 String => ByteBuf 编码发出
-                        channel.pipeline().addLast(new StringEncoder());
+                        ch.pipeline().addLast(new StringEncoder());
                     }
                 })
                 // 指定要连接的服务器和端口
