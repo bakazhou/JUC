@@ -1,4 +1,4 @@
-package com.cn.tw.graduate.bakazhou.Netty;
+package com.cn.tw.graduate.bakazhou.Netty.EventLoop;
 
 import io.netty.channel.DefaultEventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -35,5 +35,8 @@ public class TestEventLoop {
                 System.out.println(new Date());
             }
         },0,2, TimeUnit.SECONDS);
+
+        //5 关闭
+        nioEventLoopGroup.shutdownGracefully();
     }
 }

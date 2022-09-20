@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7293ae97-3c8d-47c6-9676-744088442cbe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/Netty/TestEventLoop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/Netty/EventLoop/EventLoopClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/Netty/EventLoop/EventLoopServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/Netty/HelloClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/Netty/HelloClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/Netty/TestEventLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/Netty/EventLoop/TestEventLoop.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,16 +98,30 @@
       <recent name="com.cn.tw.graduate.bakazhou" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.cn.tw.graduate.bakazhou.Netty.EventLoop" />
       <recent name="bakazhou" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestEventLoop">
-    <configuration name="ClientDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.NetWork.ClientDemo" />
+  <component name="RunManager" selected="Application.EventLoopServer">
+    <configuration name="EventLoopClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.Netty.EventLoop.EventLoopClient" />
       <module name="JUC.NettyDemo.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.cn.tw.graduate.bakazhou.NetWork.*" />
+          <option name="PATTERN" value="com.cn.tw.graduate.bakazhou.Netty.EventLoop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EventLoopServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.Netty.EventLoop.EventLoopServer" />
+      <module name="JUC.NettyDemo.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cn.tw.graduate.bakazhou.Netty.EventLoop.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -120,20 +134,7 @@
       <module name="JUC.NettyDemo.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.cn.tw.graduate.bakazhou.Netty.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HelloServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.Netty.HelloServer" />
-      <module name="JUC.NettyDemo.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.cn.tw.graduate.bakazhou.Netty.*" />
+          <option name="PATTERN" value="com.cn.tw.graduate.bakazhou.Netty.EventLoop.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -142,11 +143,11 @@
       </method>
     </configuration>
     <configuration name="TestEventLoop" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.Netty.TestEventLoop" />
+      <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.Netty.EventLoop.TestEventLoop" />
       <module name="JUC.NettyDemo.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.cn.tw.graduate.bakazhou.Netty.*" />
+          <option name="PATTERN" value="com.cn.tw.graduate.bakazhou.Netty.EventLoop.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -179,11 +180,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.EventLoopClient" />
+        <item itemvalue="Application.EventLoopServer" />
         <item itemvalue="Application.TestEventLoop" />
         <item itemvalue="Gradle.TestEventLoop.testEventLoop" />
         <item itemvalue="Application.HelloClient" />
-        <item itemvalue="Application.HelloServer" />
-        <item itemvalue="Application.ClientDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +197,7 @@
       <option name="presentableId" value="Default" />
       <updated>1663551233208</updated>
       <workItem from="1663551235510" duration="17716000" />
-      <workItem from="1663637188099" duration="4515000" />
+      <workItem from="1663637188099" duration="7468000" />
     </task>
     <task id="LOCAL-00001" summary="feat: project init success">
       <created>1663551542725</created>
@@ -289,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663581413296</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="feat: add TestEventLoop">
+      <created>1663643009796</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1663643009796</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,6 +317,7 @@
     <MESSAGE value="feat: add TestVisioPacket" />
     <MESSAGE value="feat: add nio service server and client server demo" />
     <MESSAGE value="feat: add HelloServer and HelloClient" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add HelloServer and HelloClient" />
+    <MESSAGE value="feat: add TestEventLoop" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add TestEventLoop" />
   </component>
 </project>
