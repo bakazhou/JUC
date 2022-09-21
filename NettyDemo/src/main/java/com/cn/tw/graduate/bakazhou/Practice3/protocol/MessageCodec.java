@@ -2,59 +2,93 @@ package com.cn.tw.graduate.bakazhou.Practice3.protocol;
 
 import com.cn.tw.graduate.bakazhou.Practice3.message.Message;
 import io.netty.buffer.ByteBuf;
-import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageCodec;
-import lombok.extern.slf4j.Slf4j;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.nio.charset.Charset;
 import java.util.List;
 
-@Slf4j
-@ChannelHandler.Sharable
+//通过泛型制定编解码的对象
 public class MessageCodec extends ByteToMessageCodec<Message> {
 
+    //出栈时进行编码
     @Override
-    public void encode(ChannelHandlerContext ctx, Message msg, ByteBuf out) throws Exception {
-        // 1. 4 字节的魔数
-        out.writeBytes(new byte[]{1, 2, 3, 4});
-        // 2. 1 字节的版本,
-        out.writeByte(1);
-        // 3. 1 字节的序列化方式 jdk 0 , json 1
-        out.writeByte(0);
-        // 4. 1 字节的指令类型
-        out.writeByte(msg.getMessageType());
-        // 5. 4 个字节
+    protected void encode(ChannelHandlerContext ctx, Message msg, ByteBuf out) throws Exception {
+        //魔数 BAKAZHOU 占八个字节
+        out.writeBytes("BAKAZHOU".getBytes());
+
+        //版本 1 占四个字节
+        out.writeInt(1);
+
+        //序列化算法  0代表Json 1代表jdk 占四个字节
+        out.writeInt(0);
+
+        //指令类型 int类型占四个字节
+        out.writeInt(msg.getMessageType());
+
+        //请求序号 占四个字节
         out.writeInt(msg.getSequenceId());
-        // 无意义，对齐填充
-        out.writeByte(0xff);
-        // 6. 获取内容的字节数组
+
+        //将消息正文站位bytes
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         ObjectOutputStream oos = new ObjectOutputStream(bos);
         oos.writeObject(msg);
-        byte[] bytes = bos.toByteArray();
-        // 7. 长度
-        out.writeInt(bytes.length);
-        // 8. 写入内容
-        out.writeBytes(bytes);
+        byte[] msgBytes = bos.toByteArray();
+
+        //正文长度 占四个字节
+        out.writeInt(msgBytes.length);
+
+        //正文前一共有28个字节
+        //写入正文
+        out.writeBytes(msgBytes);
     }
 
+    //入栈时进行解码
     @Override
     protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
-        int magicNum = in.readInt();
-        byte version = in.readByte();
-        byte serializerType = in.readByte();
-        byte messageType = in.readByte();
+        //魔数 BAKAZHOU 8字节
+        String magicNum = in.readBytes(8).toString(Charset.defaultCharset());
+
+        //版本号 4字节
+        int version = in.readInt();
+
+        //序列化算法 
+        int serializationAlgorithm = in.readInt();
+
+        int messageType = in.readInt();
+
+        //请求序号
         int sequenceId = in.readInt();
-        in.readByte();
+
+        //正文长度
         int length = in.readInt();
-        byte[] bytes = new byte[length];
-        in.readBytes(bytes, 0, length);
-        ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(bytes));
-        Message message = (Message) ois.readObject();
-        out.add(message);
+
+        //正文内容
+        byte[] msg = new byte[length];
+        in.readBytes(msg,0,length);
+        //判断序列化方式
+        switch (serializationAlgorithm){
+            case 0:
+                ObjectInputStream objectInputStream = new ObjectInputStream(new ByteArrayInputStream(msg));
+                Message message = (Message) objectInputStream.readObject();
+                System.out.println(magicNum);
+                System.out.println(version);
+                System.out.println(serializationAlgorithm);
+                System.out.println(messageType);
+                System.out.println(sequenceId);
+                System.out.println(length);
+                System.out.println(message);
+                out.add(message);
+                break;
+            case 1:
+                break;
+            default:
+                break;
+        }
+
     }
 }

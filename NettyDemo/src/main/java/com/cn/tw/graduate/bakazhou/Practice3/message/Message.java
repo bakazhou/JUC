@@ -1,12 +1,14 @@
 package com.cn.tw.graduate.bakazhou.Practice3.message;
 
 import lombok.Data;
+import lombok.ToString;
 
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
 @Data
+@ToString
 public abstract class Message implements Serializable {
 
     /**
