@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7293ae97-3c8d-47c6-9676-744088442cbe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice2/LengthFieldDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice2/RedisClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice2/FixedLengthClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice2/FixedLengthClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +54,7 @@
       <list>
         <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="package-info" />
       </list>
     </option>
   </component>
@@ -108,7 +108,7 @@
       <recent name="bakazhou" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LengthFieldDecoder">
+  <component name="RunManager" selected="Application.RedisClient">
     <configuration name="FixedLengthClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.Practice2.FixedLengthClient" />
       <module name="JUC.NettyDemo.main" />
@@ -148,6 +148,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RedisClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.Practice2.RedisClient" />
+      <module name="JUC.NettyDemo.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cn.tw.graduate.bakazhou.Practice2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ShortConnectClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.Practice2.ShortConnectClient" />
       <module name="JUC.NettyDemo.main" />
@@ -161,26 +174,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.cn.tw.graduate.bakazhou.Practice2.Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.Practice2.Client" />
-      <module name="JUC.NettyDemo.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.cn.tw.graduate.bakazhou.Practice2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RedisClient" />
         <item itemvalue="Application.LengthFieldDecoder" />
         <item itemvalue="Application.FixedLengthClient" />
         <item itemvalue="Application.FixedLengthServer" />
         <item itemvalue="Application.ShortConnectClient" />
-        <item itemvalue="Application.com.cn.tw.graduate.bakazhou.Practice2.Client" />
       </list>
     </recent_temporary>
   </component>
@@ -194,7 +194,7 @@
       <updated>1663551233208</updated>
       <workItem from="1663551235510" duration="17716000" />
       <workItem from="1663637188099" duration="14748000" />
-      <workItem from="1663659779184" duration="14982000" />
+      <workItem from="1663659779184" duration="16780000" />
     </task>
     <task id="LOCAL-00001" summary="feat: project init success">
       <created>1663551542725</created>
@@ -343,7 +343,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663729942071</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="feat: add LengthFieldDecoder">
+      <created>1663740526190</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1663740526190</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,6 +378,7 @@
     <MESSAGE value="feat: add practice2 server and client" />
     <MESSAGE value="feat: add ShortConnectClient" />
     <MESSAGE value="feat: add FixedLengthClient and FixedLengthServer" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add FixedLengthClient and FixedLengthServer" />
+    <MESSAGE value="feat: add LengthFieldDecoder" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add LengthFieldDecoder" />
   </component>
 </project>
