@@ -10,7 +10,6 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 
-//通过短连接的方式解决粘包问题
 public class FixedLengthClient {
     public static void main(String[] args) throws InterruptedException {
         send();
