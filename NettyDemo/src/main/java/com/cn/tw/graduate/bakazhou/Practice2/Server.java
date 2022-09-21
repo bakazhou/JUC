@@ -13,18 +13,22 @@ import lombok.extern.slf4j.Slf4j;
 public class Server {
     void start() {
         NioEventLoopGroup boss = new NioEventLoopGroup(1);
-        NioEventLoopGroup worker = new NioEventLoopGroup();
+        NioEventLoopGroup worker = new NioEventLoopGroup(1);
         try {
             ServerBootstrap serverBootstrap = new ServerBootstrap();
             serverBootstrap.channel(NioServerSocketChannel.class);
-            //设置接收缓冲区大小，复显半包的问题
-//            serverBootstrap.option(ChannelOption.SO_RCVBUF,10);
-            serverBootstrap.option(ChannelOption.RCVBUF_ALLOCATOR,new FixedRecvByteBufAllocator(10));
+            //设置系统接收缓冲区大小，复显半包的问题
+            //serverBootstrap.option(ChannelOption.SO_RCVBUF,10);
+            //serverBootstrap.option(ChannelOption.RCVBUF_ALLOCATOR,new FixedRecvByteBufAllocator(10));
+
+            //设置netty的缓冲区大小
+//            serverBootstrap.childOption(ChannelOption.RCVBUF_ALLOCATOR,new AdaptiveRecvByteBufAllocator(16,16,16));
+
             serverBootstrap.group(boss, worker);
             serverBootstrap.childHandler(new ChannelInitializer<SocketChannel>() {
                 @Override
                 protected void initChannel(SocketChannel ch) {
-                    ch.pipeline().addLast(new LoggingHandler(LogLevel.INFO));
+                    ch.pipeline().addLast(worker,new LoggingHandler(LogLevel.INFO));
                     ch.pipeline().addLast(new ChannelInboundHandlerAdapter() {
 
                         @Override
