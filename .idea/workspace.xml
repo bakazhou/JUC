@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7293ae97-3c8d-47c6-9676-744088442cbe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/Netty/Practice/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/Netty/Practice/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/ByteBufferUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice2/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice2/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/Netty/Practice/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice1/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NettyDemo/src/test/java/com/cn/tw/graduate/bakazhou/Netty/Practice/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice1/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,17 +77,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Project.color&quot;: &quot;000c22&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Project.color": "000c22",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "jdk.selected.JAVA_MODULE": "11",
+    "last_opened_file_path": "/Users/tianlezhou.zhou/Desktop/Probation/JUC/JUC/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
@@ -97,38 +106,13 @@
       <recent name="com.cn.tw.graduate.bakazhou" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.cn.tw.graduate.bakazhou" />
       <recent name="com.cn.tw.graduate.bakazhou.Netty.Channel" />
       <recent name="com.cn.tw.graduate.bakazhou.Netty.EventLoop" />
       <recent name="bakazhou" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Client">
-    <configuration name="ChannelClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.Netty.Channel.ChannelClient" />
-      <module name="JUC.NettyDemo.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.cn.tw.graduate.bakazhou.Netty.Channel.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ChannelServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.Netty.Channel.ChannelServer" />
-      <module name="JUC.NettyDemo.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.cn.tw.graduate.bakazhou.Netty.Channel.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.com.cn.tw.graduate.bakazhou.Practice2.Client">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.Netty.Practice.Client" />
       <module name="JUC.NettyDemo.test" />
@@ -168,13 +152,39 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.cn.tw.graduate.bakazhou.Practice2.Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.Practice2.Client" />
+      <module name="JUC.NettyDemo.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cn.tw.graduate.bakazhou.Practice2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.cn.tw.graduate.bakazhou.Practice2.Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.Practice2.Server" />
+      <module name="JUC.NettyDemo.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cn.tw.graduate.bakazhou.Practice2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.com.cn.tw.graduate.bakazhou.Practice2.Client" />
+        <item itemvalue="Application.com.cn.tw.graduate.bakazhou.Practice2.Server" />
         <item itemvalue="Application.Client" />
         <item itemvalue="Application.Server" />
         <item itemvalue="Application.PipeLineServer" />
-        <item itemvalue="Application.ChannelClient" />
-        <item itemvalue="Application.ChannelServer" />
       </list>
     </recent_temporary>
   </component>
@@ -188,7 +198,7 @@
       <updated>1663551233208</updated>
       <workItem from="1663551235510" duration="17716000" />
       <workItem from="1663637188099" duration="14748000" />
-      <workItem from="1663659779184" duration="804000" />
+      <workItem from="1663659779184" duration="9389000" />
     </task>
     <task id="LOCAL-00001" summary="feat: project init success">
       <created>1663551542725</created>
@@ -309,7 +319,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663658260189</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="feat: add practice server and client">
+      <created>1663660812344</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1663660812344</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,6 +350,7 @@
     <MESSAGE value="feat: add eventLoopClient &amp; eventLoopServer" />
     <MESSAGE value="feat: add ChannelClient" />
     <MESSAGE value="feat: add PipeLineServer" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add PipeLineServer" />
+    <MESSAGE value="feat: add practice server and client" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add practice server and client" />
   </component>
 </project>

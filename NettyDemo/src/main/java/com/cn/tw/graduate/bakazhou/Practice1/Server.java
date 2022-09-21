@@ -1,4 +1,4 @@
-package com.cn.tw.graduate.bakazhou.Netty.Practice;
+package com.cn.tw.graduate.bakazhou.Practice1;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.ByteBuf;
