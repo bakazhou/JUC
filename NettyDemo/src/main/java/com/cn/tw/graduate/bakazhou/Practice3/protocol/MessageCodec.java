@@ -23,7 +23,6 @@ public class MessageCodec extends ByteToMessageCodec<Message> {
 
         //版本 1 占四个字节
         out.writeInt(1);
-
         //序列化算法  0代表Json 1代表jdk 占四个字节
         out.writeInt(0);
 
@@ -73,15 +72,10 @@ public class MessageCodec extends ByteToMessageCodec<Message> {
         //判断序列化方式
         switch (serializationAlgorithm){
             case 0:
-                ObjectInputStream objectInputStream = new ObjectInputStream(new ByteArrayInputStream(msg));
-                Message message = (Message) objectInputStream.readObject();
-                System.out.println(magicNum);
-                System.out.println(version);
-                System.out.println(serializationAlgorithm);
-                System.out.println(messageType);
-                System.out.println(sequenceId);
-                System.out.println(length);
-                System.out.println(message);
+                ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(msg));
+                Message message = (Message) ois.readObject();
+
+                //传给下一个处理器使用
                 out.add(message);
                 break;
             case 1:
