@@ -2,15 +2,16 @@ package com.cn.tw.graduate.bakazhou.Practice3.server.handler;
 
 import com.cn.tw.graduate.bakazhou.Practice3.message.GroupCreateRequestMessage;
 import com.cn.tw.graduate.bakazhou.Practice3.message.GroupCreateResponseMessage;
-import com.cn.tw.graduate.bakazhou.Practice3.server.session.Group;
 import com.cn.tw.graduate.bakazhou.Practice3.server.session.GroupSessionFactory;
 import com.cn.tw.graduate.bakazhou.Practice3.server.session.SessionFactory;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
 import java.util.Set;
 import java.util.stream.Collectors;
 
+@ChannelHandler.Sharable
 public class GroupCreateRequestHandler extends SimpleChannelInboundHandler<GroupCreateRequestMessage> {
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, GroupCreateRequestMessage msg) throws Exception {

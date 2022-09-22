@@ -76,6 +76,12 @@ public class ChatClient {
                                 GroupMembersResponseMessage groupMembersResponseMessage = (GroupMembersResponseMessage) msg;
                                 System.out.println("该群组包含成员:"+groupMembersResponseMessage.getMembers());
                             }
+
+                            //接收加入群组的消息
+                            if (msg instanceof GroupJoinResponseMessage){
+                                GroupJoinResponseMessage joinResponseMessage = (GroupJoinResponseMessage) msg;
+                                System.out.println(joinResponseMessage.getReason());
+                            }
                         }
 
                         @Override
