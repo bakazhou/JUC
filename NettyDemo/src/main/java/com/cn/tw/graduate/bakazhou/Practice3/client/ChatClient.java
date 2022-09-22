@@ -1,6 +1,7 @@
 package com.cn.tw.graduate.bakazhou.Practice3.client;
 
 
+import com.cn.tw.graduate.bakazhou.Practice3.message.ChatRequestMessage;
 import com.cn.tw.graduate.bakazhou.Practice3.message.LoginRequestMessage;
 import com.cn.tw.graduate.bakazhou.Practice3.message.LoginResponseMessage;
 import com.cn.tw.graduate.bakazhou.Practice3.protocol.MessageCodec;
@@ -14,7 +15,12 @@ import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 @Slf4j
 public class ChatClient {
@@ -22,6 +28,12 @@ public class ChatClient {
         NioEventLoopGroup group = new NioEventLoopGroup();
         LoggingHandler LOGGING_HANDLER = new LoggingHandler(LogLevel.DEBUG);
         MessageCodec MESSAGE_CODEC = new MessageCodec();
+
+        //用于线程间通信，在登录完成后，通知用户线程登录完成，计数器减到0的时候就继续向下运行
+        CountDownLatch WAIT_FOR_LOGIN = new CountDownLatch(1);
+
+        //是否登录成功的标识位
+        AtomicBoolean LOGIN_SUCCESS = new AtomicBoolean(false);
         try {
             Bootstrap bootstrap = new Bootstrap();
             bootstrap.channel(NioSocketChannel.class);
@@ -37,7 +49,12 @@ public class ChatClient {
                         // 获取登录操作的返回信息
                         @Override
                         public void channelRead(ChannelHandlerContext ctx, Object msg) {
-                            LoginResponseMessage message = (LoginResponseMessage) msg;
+                            //如果msg是登录的返回响应消息
+                            if (msg instanceof LoginResponseMessage){
+                                LoginResponseMessage loginResponseMessage = (LoginResponseMessage) msg;
+                                LOGIN_SUCCESS.set(loginResponseMessage.isSuccess());
+                            }
+                            WAIT_FOR_LOGIN.countDown();
 
                         }
 
@@ -55,6 +72,52 @@ public class ChatClient {
 
                                 //此处是ChannelInboundHandlerAdapter入栈处理器，所以处理完之后就会进行出栈，向上走到MessageCodec和LoginHandler
                                 ctx.writeAndFlush(login);
+
+                                //阻塞等待登录返回的消息
+                                try {
+                                    WAIT_FOR_LOGIN.await();
+                                } catch (InterruptedException e) {
+                                    throw new RuntimeException(e);
+                                }
+                                //登录失败
+                                if (!LOGIN_SUCCESS.get()){
+                                    System.out.println("登录失败，请重启程序");
+                                    ctx.channel().close();
+                                    return;
+                                }
+                                while (true){
+                                    System.out.println("==================================");
+                                    System.out.println("send [username] [content]");
+                                    System.out.println("gsend [group name] [content]");
+                                    System.out.println("gcreate [group name] [m1,m2,m3...]");
+                                    System.out.println("gmembers [group name]");
+                                    System.out.println("gjoin [group name]");
+                                    System.out.println("gquit [group name]");
+                                    System.out.println("quit");
+                                    System.out.println("==================================");
+                                    System.out.println("登录成功,请输入指令:");
+                                    Scanner input = new Scanner(System.in);
+                                    String command = input.nextLine();
+                                    String[] s = command.split("");
+                                    switch (s[0]){
+                                        case "send":
+                                            ctx.writeAndFlush(new ChatRequestMessage(userName,s[1],s[2]));
+                                            break;
+                                        case "gsend":
+                                            break;
+                                        case "gcreate":
+                                            break;
+                                        case "gmembers":
+                                            break;
+                                        case "gjoin":
+                                            break;
+                                        case "gquit":
+                                            break;
+                                        case "quit":
+                                            ctx.channel().close();
+                                            return;
+                                    }
+                                }
 
                             },"login").start();
                         }
