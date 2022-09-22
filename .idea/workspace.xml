@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7293ae97-3c8d-47c6-9676-744088442cbe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/handler/ChatRequestMessageHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/handler/LoginRequestMessageSimpleChannelInboundHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/handler/GroupCreateRequestHandle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/client/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/client/ChatClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/message/ChatRequestMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/message/ChatRequestMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/message/ChatResponseMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/message/ChatResponseMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/ChatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/ChatServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/handler/ChatRequestMessageHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/handler/ChatRequestMessageHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/session/GroupSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/session/GroupSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/session/GroupSessionMemoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/session/GroupSessionMemoryImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,7 +225,7 @@
       <workItem from="1663637188099" duration="14748000" />
       <workItem from="1663659779184" duration="28249000" />
       <workItem from="1663809770803" duration="6511000" />
-      <workItem from="1663816384653" duration="7844000" />
+      <workItem from="1663816384653" duration="8682000" />
     </task>
     <task id="LOCAL-00001" summary="feat: project init success">
       <created>1663551542725</created>
@@ -439,7 +437,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663827739848</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="feat: completed chat">
+      <created>1663831954612</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1663831954612</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -457,7 +462,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add shouldReturnStringWhenReadData" />
     <MESSAGE value="feat: add ByteBufferUtil" />
     <MESSAGE value="feat: update TestBufferReadWrite" />
     <MESSAGE value="feat: add TestByteAllocate" />
@@ -482,7 +486,8 @@
     <MESSAGE value="feat: completed ChatClient" />
     <MESSAGE value="feat: completed send" />
     <MESSAGE value="feat: completed gsend" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: completed gsend" />
+    <MESSAGE value="feat: completed chat" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: completed chat" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

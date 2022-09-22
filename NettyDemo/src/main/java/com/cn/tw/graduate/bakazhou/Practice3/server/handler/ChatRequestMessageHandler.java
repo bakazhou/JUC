@@ -18,10 +18,8 @@ public class ChatRequestMessageHandler extends SimpleChannelInboundHandler<ChatR
 
         Channel channel = SessionFactory.getSession().getChannel(toUser);
 
-        System.out.println("channel is "+channel);
         //说明对方在线
         if (channel != null){
-            System.out.println("nooooo");
             channel.writeAndFlush(new ChatResponseMessage(fromUser, content));
         }else {
             ctx.writeAndFlush(new ChatResponseMessage(false,"对方目前不在线上，请稍后再试"));

@@ -51,4 +51,11 @@ public class GroupSessionMemoryImpl implements GroupSession {
                 .filter(Objects::nonNull)
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public boolean groupExist(String groupName) {
+        return groupMap.containsKey(groupName);
+    }
+
+
 }

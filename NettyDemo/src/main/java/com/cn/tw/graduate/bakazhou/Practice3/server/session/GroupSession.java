@@ -54,4 +54,6 @@ public interface GroupSession {
      * @return 成员 channel 集合
      */
     List<Channel> getMembersChannel(String name);
+
+    boolean groupExist(String groupName);
 }

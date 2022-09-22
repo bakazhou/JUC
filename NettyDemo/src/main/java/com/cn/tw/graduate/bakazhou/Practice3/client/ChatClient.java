@@ -60,7 +60,7 @@ public class ChatClient {
                                 if (chatResponseMessage.isSuccess()){
                                     System.out.println(chatResponseMessage.getFrom()+" say: "+chatResponseMessage.getContent());
                                 }else {
-                                    System.out.println("对方现在不在线，请稍后再试");
+                                    System.out.println(chatResponseMessage.getReason());
                                 }
                             }
 
