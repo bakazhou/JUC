@@ -51,8 +51,18 @@ public class ChatClient {
                             if (msg instanceof LoginResponseMessage){
                                 LoginResponseMessage loginResponseMessage = (LoginResponseMessage) msg;
                                 LOGIN_SUCCESS.set(loginResponseMessage.isSuccess());
+                                WAIT_FOR_LOGIN.countDown();
                             }
-                            WAIT_FOR_LOGIN.countDown();
+
+                            //如果消息是别人发送的消息
+                            if (msg instanceof ChatResponseMessage){
+                                ChatResponseMessage chatResponseMessage = (ChatResponseMessage) msg;
+                                if (chatResponseMessage.isSuccess()){
+                                    System.out.println(chatResponseMessage.getFrom()+" say: "+chatResponseMessage.getContent());
+                                }else {
+                                    System.out.println("对方现在不在线，请稍后再试");
+                                }
+                            }
 
                         }
 
@@ -93,10 +103,10 @@ public class ChatClient {
                                     System.out.println("gquit [group name]");
                                     System.out.println("quit");
                                     System.out.println("==================================");
-                                    System.out.println("登录成功,请输入指令:");
+                                    System.out.println("请输入操作指令:");
                                     Scanner input = new Scanner(System.in);
                                     String command = input.nextLine();
-                                    String[] s = command.split("");
+                                    String[] s = command.split(" ");
                                     switch (s[0]){
                                         case "send":
                                             ctx.writeAndFlush(new ChatRequestMessage(userName,s[1],s[2]));
@@ -106,7 +116,7 @@ public class ChatClient {
                                             break;
                                         case "gcreate":
                                             Set<String> set = new HashSet<>(Arrays.asList(s[2].split(",")));
-                                            set.add(userName); // 加入自己
+                                            set.add(userName);
                                             ctx.writeAndFlush(new GroupCreateRequestMessage(s[1], set));
                                             break;
                                         case "gmembers":

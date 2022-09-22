@@ -1,14 +1,11 @@
 package com.cn.tw.graduate.bakazhou.Practice3.server;
 
-import com.cn.tw.graduate.bakazhou.Practice3.message.LoginRequestMessage;
-import com.cn.tw.graduate.bakazhou.Practice3.message.LoginResponseMessage;
+import com.cn.tw.graduate.bakazhou.Practice3.server.handler.ChatRequestMessageHandler;
+import com.cn.tw.graduate.bakazhou.Practice3.server.handler.LoginRequestMessageSimpleChannelInboundHandler;
 import com.cn.tw.graduate.bakazhou.Practice3.protocol.MessageCodec;
-import com.cn.tw.graduate.bakazhou.Practice3.server.service.UserServiceFactory;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
-import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInitializer;
-import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
@@ -20,8 +17,9 @@ public class ChatServer {
     public static void main(String[] args) {
         NioEventLoopGroup boss = new NioEventLoopGroup();
         NioEventLoopGroup worker = new NioEventLoopGroup();
-        LoggingHandler LOGIN_HANDLER = new LoggingHandler(LogLevel.INFO);
-        MessageCodec MESSAGE_CODEC = new MessageCodec();
+        LoggingHandler LOG = new LoggingHandler(LogLevel.INFO);
+        ChatRequestMessageHandler CHAT_REQUEST_HANDLER = new ChatRequestMessageHandler();
+        LoginRequestMessageSimpleChannelInboundHandler LOGIN_REQUEST_HANDLER = new LoginRequestMessageSimpleChannelInboundHandler();
         try {
             ServerBootstrap serverBootstrap = new ServerBootstrap();
             serverBootstrap.channel(NioServerSocketChannel.class);
@@ -30,24 +28,12 @@ public class ChatServer {
                 @Override
                 protected void initChannel(SocketChannel ch) {
                     ch.pipeline().addLast(new LengthFieldBasedFrameDecoder(1024, 24, 4, 4, 0));
-                    ch.pipeline().addLast(LOGIN_HANDLER);
-                    ch.pipeline().addLast(MESSAGE_CODEC);
-
-
-                    //只处理LoginRequestMessage
-                    ch.pipeline().addLast(new SimpleChannelInboundHandler<LoginRequestMessage>() {
-                        @Override
-                        protected void channelRead0(ChannelHandlerContext ctx, LoginRequestMessage msg) {
-                            boolean login = UserServiceFactory.getUserService().login(msg.getUsername(), msg.getPassword());
-                            LoginResponseMessage loginResponseMessage;
-                            if (login){
-                                loginResponseMessage = new LoginResponseMessage(true,"登录成功");
-                            }else {
-                                loginResponseMessage = new LoginResponseMessage(false,"用户名或密码错误");
-                            }
-                            ctx.writeAndFlush(loginResponseMessage);
-                        }
-                    });
+                    ch.pipeline().addLast(LOG);
+                    ch.pipeline().addLast(new MessageCodec());
+                    //处理LoginRequestMessage
+                    ch.pipeline().addLast(LOGIN_REQUEST_HANDLER);
+                    //处理ChatRequestMessage
+                    ch.pipeline().addLast(CHAT_REQUEST_HANDLER);
                 }
             });
             Channel channel = serverBootstrap.bind(8080).sync().channel();
