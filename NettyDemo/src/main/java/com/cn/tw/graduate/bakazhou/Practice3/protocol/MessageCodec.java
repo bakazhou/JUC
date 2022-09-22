@@ -17,7 +17,7 @@ public class MessageCodec extends ByteToMessageCodec<Message> {
 
     //出栈时进行编码
     @Override
-    protected void encode(ChannelHandlerContext ctx, Message msg, ByteBuf out) throws Exception {
+    public void encode(ChannelHandlerContext ctx, Message msg, ByteBuf out) throws Exception {
         //魔数 BAKAZHOU 占八个字节
         out.writeBytes("BAKAZHOU".getBytes());
 
@@ -40,15 +40,17 @@ public class MessageCodec extends ByteToMessageCodec<Message> {
 
         //正文长度 占四个字节
         out.writeInt(msgBytes.length);
+        //正文前一共有28个字节,补齐到32字节
+        out.writeBytes(new byte[]{1,2,3,4});
 
-        //正文前一共有28个字节
+
         //写入正文
         out.writeBytes(msgBytes);
     }
 
     //入栈时进行解码
     @Override
-    protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
+    public void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
         //魔数 BAKAZHOU 8字节
         String magicNum = in.readBytes(8).toString(Charset.defaultCharset());
 
@@ -66,23 +68,17 @@ public class MessageCodec extends ByteToMessageCodec<Message> {
         //正文长度
         int length = in.readInt();
 
+        //有四个字节的对齐占位符
+        int dif = in.readInt();
+
         //正文内容
         byte[] msg = new byte[length];
         in.readBytes(msg,0,length);
         //判断序列化方式
-        switch (serializationAlgorithm){
-            case 0:
-                ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(msg));
-                Message message = (Message) ois.readObject();
-
-                //传给下一个处理器使用
-                out.add(message);
-                break;
-            case 1:
-                break;
-            default:
-                break;
-        }
+        ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(msg));
+        Message message = (Message) ois.readObject();
+        //传给下一个处理器使用
+        out.add(message);
 
     }
 }
