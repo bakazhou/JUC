@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7293ae97-3c8d-47c6-9676-744088442cbe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/client/command/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/client/command/SendCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/handler/GroupJoinRequestMessageHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/handler/GroupChatRequestMessageHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/client/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/client/ChatClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/message/GroupJoinRequestMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/message/GroupJoinRequestMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/message/GroupChatRequestMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/message/GroupChatRequestMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/message/GroupChatResponseMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/message/GroupChatResponseMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/ChatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/ChatServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/handler/GroupCreateRequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/handler/GroupCreateRequestHandler.java" afterDir="false" />
     </list>
@@ -143,7 +142,7 @@
       <recent name="com.cn.tw.graduate.bakazhou.Netty.Channel" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ChatClient2">
+  <component name="RunManager" selected="Application.ChatClient1">
     <configuration name="ChatClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.Practice3.client.ChatClient" />
       <module name="JUC.NettyDemo.main" />
@@ -183,12 +182,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCodec" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.Test.TestCodec" />
+    <configuration name="ChatClient3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.Practice3.client.ChatClient3" />
       <module name="JUC.NettyDemo.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.cn.tw.graduate.bakazhou.Test.*" />
+          <option name="PATTERN" value="com.cn.tw.graduate.bakazhou.Practice3.client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -196,12 +195,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestMessageCodec" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.Practice3.example.TestMessageCodec" />
+    <configuration name="ChatServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.Practice3.server.ChatServer" />
       <module name="JUC.NettyDemo.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.cn.tw.graduate.bakazhou.Practice3.example.*" />
+          <option name="PATTERN" value="com.cn.tw.graduate.bakazhou.Practice3.server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -211,11 +210,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ChatClient3" />
+        <item itemvalue="Application.ChatServer" />
         <item itemvalue="Application.ChatClient2" />
         <item itemvalue="Application.ChatClient1" />
         <item itemvalue="Application.ChatClient" />
-        <item itemvalue="Application.TestMessageCodec" />
-        <item itemvalue="Application.TestCodec" />
       </list>
     </recent_temporary>
   </component>
@@ -231,7 +230,7 @@
       <workItem from="1663637188099" duration="14748000" />
       <workItem from="1663659779184" duration="28249000" />
       <workItem from="1663809770803" duration="6511000" />
-      <workItem from="1663816384653" duration="12443000" />
+      <workItem from="1663816384653" duration="15588000" />
     </task>
     <task id="LOCAL-00001" summary="feat: project init success">
       <created>1663551542725</created>
@@ -471,7 +470,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663835410093</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="feat: completed gjoin">
+      <created>1663836274197</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1663836274197</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -489,7 +495,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add TestTranslateString" />
     <MESSAGE value="feat: add TestVisioPacket" />
     <MESSAGE value="feat: add nio service server and client server demo" />
     <MESSAGE value="feat: add HelloServer and HelloClient" />
@@ -514,7 +519,8 @@
     <MESSAGE value="feat: add GroupCreateRequestHandle" />
     <MESSAGE value="feat: completed gcreate" />
     <MESSAGE value="feat: completed gmembers" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: completed gmembers" />
+    <MESSAGE value="feat: completed gjoin" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: completed gjoin" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

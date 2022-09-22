@@ -9,6 +9,22 @@ public class GroupChatResponseMessage extends AbstractResponseMessage {
     private String from;
     private String content;
 
+    public String getFrom() {
+        return from;
+    }
+
+    public void setFrom(String from) {
+        this.from = from;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
     public GroupChatResponseMessage(boolean success, String reason) {
         super(success, reason);
     }

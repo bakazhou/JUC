@@ -1,11 +1,13 @@
 package com.cn.tw.graduate.bakazhou.Practice3.client;
 
 
-import com.cn.tw.graduate.bakazhou.Practice3.client.command.Command;
 import com.cn.tw.graduate.bakazhou.Practice3.message.*;
 import com.cn.tw.graduate.bakazhou.Practice3.protocol.MessageCodec;
 import io.netty.bootstrap.Bootstrap;
-import io.netty.channel.*;
+import io.netty.channel.Channel;
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelInboundHandlerAdapter;
+import io.netty.channel.ChannelInitializer;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
@@ -58,7 +60,7 @@ public class ChatClient {
                             //如果消息是别人发送的消息
                             if (msg instanceof ChatResponseMessage){
                                 ChatResponseMessage chatResponseMessage = (ChatResponseMessage) msg;
-                                if (chatResponseMessage.isSuccess()){
+                                if (chatResponseMessage.getContent() != null){
                                     System.out.println(chatResponseMessage.getFrom()+" say: "+chatResponseMessage.getContent());
                                 }else {
                                     System.out.println(chatResponseMessage.getReason());
@@ -81,6 +83,16 @@ public class ChatClient {
                             if (msg instanceof GroupJoinResponseMessage){
                                 GroupJoinResponseMessage joinResponseMessage = (GroupJoinResponseMessage) msg;
                                 System.out.println(joinResponseMessage.getReason());
+                            }
+
+                            //处理群发消息
+                            if (msg instanceof GroupChatResponseMessage){
+                                GroupChatResponseMessage groupChatResponseMessage = (GroupChatResponseMessage) msg;
+                                if (groupChatResponseMessage.getContent() == null){
+                                    System.out.println(groupChatResponseMessage.getReason());
+                                }else {
+                                    System.out.println(groupChatResponseMessage.getFrom()+" say: "+groupChatResponseMessage.getContent());
+                                }
                             }
                         }
 
