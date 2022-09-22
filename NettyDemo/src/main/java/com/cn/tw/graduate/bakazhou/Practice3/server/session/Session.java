@@ -3,6 +3,8 @@ package com.cn.tw.graduate.bakazhou.Practice3.server.session;
 
 import io.netty.channel.Channel;
 
+import java.util.Set;
+
 /**
  * 会话管理接口
  */
@@ -43,4 +45,6 @@ public interface Session {
      * @return channel
      */
     Channel getChannel(String username);
+
+    Set<String> getUsers();
 }

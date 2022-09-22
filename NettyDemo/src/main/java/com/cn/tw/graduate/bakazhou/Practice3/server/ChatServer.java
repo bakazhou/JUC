@@ -1,6 +1,7 @@
 package com.cn.tw.graduate.bakazhou.Practice3.server;
 
 import com.cn.tw.graduate.bakazhou.Practice3.server.handler.ChatRequestMessageHandler;
+import com.cn.tw.graduate.bakazhou.Practice3.server.handler.GroupCreateRequestHandler;
 import com.cn.tw.graduate.bakazhou.Practice3.server.handler.LoginRequestMessageSimpleChannelInboundHandler;
 import com.cn.tw.graduate.bakazhou.Practice3.protocol.MessageCodec;
 import io.netty.bootstrap.ServerBootstrap;
@@ -20,6 +21,7 @@ public class ChatServer {
         LoggingHandler LOG = new LoggingHandler(LogLevel.INFO);
         ChatRequestMessageHandler CHAT_REQUEST_HANDLER = new ChatRequestMessageHandler();
         LoginRequestMessageSimpleChannelInboundHandler LOGIN_REQUEST_HANDLER = new LoginRequestMessageSimpleChannelInboundHandler();
+        GroupCreateRequestHandler GROUP_CREATE_REQUEST_HANDLER = new GroupCreateRequestHandler();
         try {
             ServerBootstrap serverBootstrap = new ServerBootstrap();
             serverBootstrap.channel(NioServerSocketChannel.class);
@@ -34,6 +36,8 @@ public class ChatServer {
                     ch.pipeline().addLast(LOGIN_REQUEST_HANDLER);
                     //处理ChatRequestMessage
                     ch.pipeline().addLast(CHAT_REQUEST_HANDLER);
+                    //处理GroupCreateMessage
+                    ch.pipeline().addLast(GROUP_CREATE_REQUEST_HANDLER);
                 }
             });
             Channel channel = serverBootstrap.bind(8080).sync().channel();

@@ -3,6 +3,7 @@ package com.cn.tw.graduate.bakazhou.Practice3.server.session;
 import io.netty.channel.Channel;
 
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class SessionMemoryImpl implements Session {
@@ -43,5 +44,9 @@ public class SessionMemoryImpl implements Session {
     @Override
     public String toString() {
         return usernameChannelMap.toString();
+    }
+
+    public Set<String> getUsers(){
+        return usernameChannelMap.keySet();
     }
 }

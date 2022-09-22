@@ -64,6 +64,10 @@ public class ChatClient {
                                 }
                             }
 
+                            if (msg instanceof GroupCreateResponseMessage){
+                                GroupCreateResponseMessage groupCreateResponseMessage = (GroupCreateResponseMessage) msg;
+                                System.out.println(groupCreateResponseMessage.getReason());
+                            }
                         }
 
                         @Override
