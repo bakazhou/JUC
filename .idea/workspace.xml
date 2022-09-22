@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7293ae97-3c8d-47c6-9676-744088442cbe" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/client/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/client/ChatClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -215,7 +214,7 @@
       <workItem from="1663637188099" duration="14748000" />
       <workItem from="1663659779184" duration="28249000" />
       <workItem from="1663809770803" duration="6511000" />
-      <workItem from="1663816384653" duration="4482000" />
+      <workItem from="1663816384653" duration="4804000" />
     </task>
     <task id="LOCAL-00001" summary="feat: project init success">
       <created>1663551542725</created>
@@ -413,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663817981941</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="feat: completed send">
+      <created>1663827521321</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1663827521321</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,7 +437,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add TestByteBuffer" />
     <MESSAGE value="feat: add file data.txt" />
     <MESSAGE value="feat: add shouldReturnStringWhenReadData" />
     <MESSAGE value="feat: add ByteBufferUtil" />
@@ -456,7 +461,8 @@
     <MESSAGE value="feat: add TestMessageCodec" />
     <MESSAGE value="feat: add server module" />
     <MESSAGE value="feat: completed ChatClient" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: completed ChatClient" />
+    <MESSAGE value="feat: completed send" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: completed send" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

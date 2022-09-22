@@ -1,9 +1,7 @@
 package com.cn.tw.graduate.bakazhou.Practice3.client;
 
 
-import com.cn.tw.graduate.bakazhou.Practice3.message.ChatRequestMessage;
-import com.cn.tw.graduate.bakazhou.Practice3.message.LoginRequestMessage;
-import com.cn.tw.graduate.bakazhou.Practice3.message.LoginResponseMessage;
+import com.cn.tw.graduate.bakazhou.Practice3.message.*;
 import com.cn.tw.graduate.bakazhou.Practice3.protocol.MessageCodec;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
@@ -104,14 +102,21 @@ public class ChatClient {
                                             ctx.writeAndFlush(new ChatRequestMessage(userName,s[1],s[2]));
                                             break;
                                         case "gsend":
+                                            ctx.writeAndFlush(new GroupChatRequestMessage(userName, s[1], s[2]));
                                             break;
                                         case "gcreate":
+                                            Set<String> set = new HashSet<>(Arrays.asList(s[2].split(",")));
+                                            set.add(userName); // 加入自己
+                                            ctx.writeAndFlush(new GroupCreateRequestMessage(s[1], set));
                                             break;
                                         case "gmembers":
+                                            ctx.writeAndFlush(new GroupMembersRequestMessage(s[1]));
                                             break;
                                         case "gjoin":
+                                            ctx.writeAndFlush(new GroupJoinRequestMessage(userName, s[1]));
                                             break;
                                         case "gquit":
+                                            ctx.writeAndFlush(new GroupQuitRequestMessage(userName, s[1]));
                                             break;
                                         case "quit":
                                             ctx.channel().close();
