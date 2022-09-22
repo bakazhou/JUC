@@ -1,6 +1,7 @@
 package com.cn.tw.graduate.bakazhou.Practice3.client;
 
 
+import com.cn.tw.graduate.bakazhou.Practice3.client.command.Command;
 import com.cn.tw.graduate.bakazhou.Practice3.message.*;
 import com.cn.tw.graduate.bakazhou.Practice3.protocol.MessageCodec;
 import io.netty.bootstrap.Bootstrap;
@@ -64,9 +65,16 @@ public class ChatClient {
                                 }
                             }
 
+                            //接收群组创建消息
                             if (msg instanceof GroupCreateResponseMessage){
                                 GroupCreateResponseMessage groupCreateResponseMessage = (GroupCreateResponseMessage) msg;
                                 System.out.println(groupCreateResponseMessage.getReason());
+                            }
+
+                            //接收群组创建成员消息
+                            if (msg instanceof GroupMembersResponseMessage){
+                                GroupMembersResponseMessage groupMembersResponseMessage = (GroupMembersResponseMessage) msg;
+                                System.out.println("该群组包含成员:"+groupMembersResponseMessage.getMembers());
                             }
                         }
 
@@ -94,7 +102,7 @@ public class ChatClient {
                                 //登录失败
                                 if (!LOGIN_SUCCESS.get()){
                                     System.out.println("登录失败，请重启程序");
-                                    ctx.channel().close();
+                                    ctx.close();
                                     return;
                                 }
                                 while (true){
@@ -108,32 +116,29 @@ public class ChatClient {
                                     System.out.println("quit");
                                     System.out.println("==================================");
                                     System.out.println("请输入操作指令:");
-                                    Scanner input = new Scanner(System.in);
-                                    String command = input.nextLine();
-                                    String[] s = command.split(" ");
-                                    switch (s[0]){
+                                    Scanner operation = new Scanner(System.in);
+                                    String[] input = operation.nextLine().split(" ");
+                                    switch (input[0]){
                                         case "send":
-                                            ctx.writeAndFlush(new ChatRequestMessage(userName,s[1],s[2]));
+                                            sendChatMessage(ctx, userName, input);
                                             break;
                                         case "gsend":
-                                            ctx.writeAndFlush(new GroupChatRequestMessage(userName, s[1], s[2]));
+                                            sendGroupMessage(ctx, userName, input);
                                             break;
                                         case "gcreate":
-                                            Set<String> set = new HashSet<>(Arrays.asList(s[2].split(",")));
-                                            set.add(userName);
-                                            ctx.writeAndFlush(new GroupCreateRequestMessage(s[1], set));
+                                            createGroup(ctx, userName, input);
                                             break;
                                         case "gmembers":
-                                            ctx.writeAndFlush(new GroupMembersRequestMessage(s[1]));
+                                            getGroupMembers(ctx, input);
                                             break;
                                         case "gjoin":
-                                            ctx.writeAndFlush(new GroupJoinRequestMessage(userName, s[1]));
+                                            joinGroup(ctx, userName, input);
                                             break;
                                         case "gquit":
-                                            ctx.writeAndFlush(new GroupQuitRequestMessage(userName, s[1]));
+                                            quitGroup(ctx, userName, input);
                                             break;
                                         case "quit":
-                                            ctx.channel().close();
+                                            quit(ctx);
                                             return;
                                     }
                                 }
@@ -151,5 +156,35 @@ public class ChatClient {
         } finally {
             group.shutdownGracefully();
         }
+    }
+
+    private static void quit(ChannelHandlerContext ctx) {
+        ctx.channel().close();
+    }
+
+    private static void quitGroup(ChannelHandlerContext ctx, String userName, String[] input) {
+        ctx.writeAndFlush(new GroupQuitRequestMessage(userName, input[1]));
+    }
+
+    private static void joinGroup(ChannelHandlerContext ctx, String userName, String[] input) {
+        ctx.writeAndFlush(new GroupJoinRequestMessage(userName, input[1]));
+    }
+
+    private static void getGroupMembers(ChannelHandlerContext ctx, String[] input) {
+        ctx.writeAndFlush(new GroupMembersRequestMessage(input[1]));
+    }
+
+    private static void createGroup(ChannelHandlerContext ctx, String userName, String[] input) {
+        Set<String> set = new HashSet<>(Arrays.asList(input[2].split(",")));
+        set.add(userName);
+        ctx.writeAndFlush(new GroupCreateRequestMessage(input[1], set));
+    }
+
+    private static void sendGroupMessage(ChannelHandlerContext ctx, String userName, String[] input) {
+        ctx.writeAndFlush(new GroupChatRequestMessage(userName, input[1], input[2]));
+    }
+
+    private static void sendChatMessage(ChannelHandlerContext ctx, String userName, String[] input) {
+        ctx.writeAndFlush(new ChatRequestMessage(userName, input[1], input[2]));
     }
 }

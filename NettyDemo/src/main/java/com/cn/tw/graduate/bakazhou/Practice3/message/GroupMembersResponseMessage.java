@@ -15,6 +15,14 @@ public class GroupMembersResponseMessage extends Message {
         this.members = members;
     }
 
+    public Set<String> getMembers() {
+        return members;
+    }
+
+    public void setMembers(Set<String> members) {
+        this.members = members;
+    }
+
     @Override
     public int getMessageType() {
         return GroupMembersResponseMessage;
