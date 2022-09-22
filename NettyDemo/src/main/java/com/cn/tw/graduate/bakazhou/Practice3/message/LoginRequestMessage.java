@@ -1,15 +1,15 @@
 package com.cn.tw.graduate.bakazhou.Practice3.message;
 
-import lombok.Data;
-import lombok.ToString;
-
-@Data
-@ToString(callSuper = true)
 public class LoginRequestMessage extends Message {
-    private String username;
-    private String password;
+    private final String username;
+    private final String password;
 
-    public LoginRequestMessage() {
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     public LoginRequestMessage(String username, String password) {

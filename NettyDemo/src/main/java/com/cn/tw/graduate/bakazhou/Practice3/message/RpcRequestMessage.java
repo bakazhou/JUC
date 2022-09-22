@@ -1,5 +1,6 @@
 package com.cn.tw.graduate.bakazhou.Practice3.message;
 
+
 import lombok.Getter;
 import lombok.ToString;
 

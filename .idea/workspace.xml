@@ -4,22 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7293ae97-3c8d-47c6-9676-744088442cbe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/protocol/MessageCodecSharable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/ChatServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/service/UserServiceFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/service/UserServiceMemoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/session/Group.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/session/GroupSession.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/session/GroupSessionFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/session/GroupSessionMemoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/session/Session.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/session/SessionFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/session/SessionMemoryImpl.java" afterDir="false" />
+    <list default="true" id="7293ae97-3c8d-47c6-9676-744088442cbe" name="Changes" comment="feat: completed ChatClient">
+      <change afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/client/ChatClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/protocol/MessageCodec.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/protocol/MessageCodec.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/protocol/TestMessageCodec.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/message/AbstractResponseMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/message/AbstractResponseMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/message/LoginRequestMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/message/LoginRequestMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/message/LoginResponseMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/message/LoginResponseMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/message/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/message/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/message/RpcRequestMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/message/RpcRequestMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/ChatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/ChatServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +40,11 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="JUC" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="JUC" type="f1a62948:ProjectNode" />
                 <item name="NettyDemo" type="2d1252cf:ModuleNode" />
               </path>
               <path>
@@ -54,6 +52,13 @@
                 <item name="JUC" type="f1a62948:ProjectNode" />
                 <item name="NettyDemo" type="2d1252cf:ModuleNode" />
                 <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="JUC" type="f1a62948:ProjectNode" />
+                <item name="NettyDemo" type="2d1252cf:ModuleNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="compileClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
               </path>
             </expand>
             <select />
@@ -78,6 +83,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="2Exxr83ZKQTYN8uONwuiupLrxLY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -85,19 +93,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Project.color": "000c22",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "jdk.selected.JAVA_MODULE": "11",
-    "last_opened_file_path": "/Users/tianlezhou.zhou/Desktop/Probation/JUC/JUC/NettyDemo/src/main/resources"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Project.color&quot;: &quot;000c22&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/tianlezhou.zhou/Desktop/Probation/JUC/JUC/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/client&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/client" />
       <recent name="$PROJECT_DIR$/NettyDemo/src/main/resources" />
       <recent name="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3" />
       <recent name="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server" />
@@ -124,13 +133,13 @@
       <recent name="bakazhou" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestMessageCodec">
-    <configuration name="ChatServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.Practice3.server.ChatServer" />
+  <component name="RunManager" selected="Application.ChatClient">
+    <configuration name="ChatClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.Practice3.client.ChatClient" />
       <module name="JUC.NettyDemo.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.cn.tw.graduate.bakazhou.Practice3.server.*" />
+          <option name="PATTERN" value="com.cn.tw.graduate.bakazhou.Practice3.client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -138,12 +147,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LengthFieldDecoder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.Practice2.LengthFieldDecoder" />
+    <configuration name="ChatServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.Practice3.server.ChatServer" />
       <module name="JUC.NettyDemo.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.cn.tw.graduate.bakazhou.Practice2.*" />
+          <option name="PATTERN" value="com.cn.tw.graduate.bakazhou.Practice3.server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -192,11 +201,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ChatClient" />
         <item itemvalue="Application.TestMessageCodec" />
         <item itemvalue="Application.TestCodec" />
         <item itemvalue="Application.ChatServer" />
         <item itemvalue="Application.RedisClient" />
-        <item itemvalue="Application.LengthFieldDecoder" />
       </list>
     </recent_temporary>
   </component>
@@ -211,7 +220,8 @@
       <workItem from="1663551235510" duration="17716000" />
       <workItem from="1663637188099" duration="14748000" />
       <workItem from="1663659779184" duration="28249000" />
-      <workItem from="1663809770803" duration="3823000" />
+      <workItem from="1663809770803" duration="6511000" />
+      <workItem from="1663816384653" duration="1460000" />
     </task>
     <task id="LOCAL-00001" summary="feat: project init success">
       <created>1663551542725</created>
@@ -395,7 +405,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663747990078</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="feat: add server module">
+      <created>1663813684419</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1663813684419</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -413,8 +430,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add project dependencies" />
-    <MESSAGE value="feat: add netty demo module" />
     <MESSAGE value="feat: add TestByteBuffer" />
     <MESSAGE value="feat: add file data.txt" />
     <MESSAGE value="feat: add shouldReturnStringWhenReadData" />
@@ -438,6 +453,8 @@
     <MESSAGE value="feat: init practice3" />
     <MESSAGE value="feat: add MessageCodec" />
     <MESSAGE value="feat: add TestMessageCodec" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add TestMessageCodec" />
+    <MESSAGE value="feat: add server module" />
+    <MESSAGE value="feat: completed ChatClient" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: completed ChatClient" />
   </component>
 </project>

@@ -32,9 +32,9 @@ public abstract class Message implements Serializable {
         this.messageType = messageType;
     }
 
-    private int sequenceId;
+    public int sequenceId;
 
-    private int messageType;
+    public int messageType;
 
     public abstract int getMessageType();
 
