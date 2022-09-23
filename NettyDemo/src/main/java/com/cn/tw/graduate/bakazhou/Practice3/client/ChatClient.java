@@ -180,10 +180,5 @@ public class ChatClient {
         ctx.writeAndFlush(new GroupMembersRequestMessage(input[1]));
     }
 
-    private static void createGroup(ChannelHandlerContext ctx, String userName, String[] input) {
-        Set<String> set = new HashSet<>(Arrays.asList(input[2].split(",")));
-        set.add(userName);
-        ctx.writeAndFlush(new GroupCreateRequestMessage(input[1], set));
-    }
 
 }
