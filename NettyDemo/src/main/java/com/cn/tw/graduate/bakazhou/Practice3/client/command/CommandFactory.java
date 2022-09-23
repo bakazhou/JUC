@@ -13,17 +13,17 @@ public class CommandFactory{
             case "send":
                 return new SendCommand();
             case "gsend":
-                return new SendCommand();
+                return new GsendCommand();
             case "gcreate":
-                return new SendCommand();
+                return new GcreateCommand();
             case "gmembers":
-                return new SendCommand();
+                return new GmembersCommand();
             case "gjoin":
-                return new SendCommand();
+                return new GjoinCommand();
             case "gquit":
-                return new SendCommand();
+                return new GquitCommand();
             case "quit":
-                return new SendCommand();
+                return new QuitCommand();
             default:
                 throw new RuntimeException("命令行错误,请输入正确的命令");
         }

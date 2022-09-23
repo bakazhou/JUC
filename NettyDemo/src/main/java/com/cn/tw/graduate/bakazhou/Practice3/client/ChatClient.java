@@ -18,10 +18,7 @@ import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.Scanner;
-import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -47,58 +44,58 @@ public class ChatClient {
                     ch.pipeline().addLast(new LengthFieldBasedFrameDecoder(1024, 24, 4, 4, 0));
                     ch.pipeline().addLast(LOGGING_HANDLER);
                     ch.pipeline().addLast(MESSAGE_CODEC);
-                    ch.pipeline().addLast("client handler",new ChannelInboundHandlerAdapter(){
+                    ch.pipeline().addLast("client handler", new ChannelInboundHandlerAdapter() {
 
                         // 获取登录操作的返回信息
                         @Override
                         public void channelRead(ChannelHandlerContext ctx, Object msg) {
                             //如果msg是登录的返回响应消息
-                            if (msg instanceof LoginResponseMessage){
+                            if (msg instanceof LoginResponseMessage) {
                                 LoginResponseMessage loginResponseMessage = (LoginResponseMessage) msg;
                                 LOGIN_SUCCESS.set(loginResponseMessage.isSuccess());
                                 WAIT_FOR_LOGIN.countDown();
                             }
 
                             //如果消息是别人发送的消息
-                            if (msg instanceof ChatResponseMessage){
+                            if (msg instanceof ChatResponseMessage) {
                                 ChatResponseMessage chatResponseMessage = (ChatResponseMessage) msg;
-                                if (chatResponseMessage.getContent() != null){
-                                    System.out.println(chatResponseMessage.getFrom()+" say: "+chatResponseMessage.getContent());
-                                }else {
+                                if (chatResponseMessage.getContent() != null) {
+                                    System.out.println(chatResponseMessage.getFrom() + " say: " + chatResponseMessage.getContent());
+                                } else {
                                     System.out.println(chatResponseMessage.getReason());
                                 }
                             }
 
                             //接收群组创建消息
-                            if (msg instanceof GroupCreateResponseMessage){
+                            if (msg instanceof GroupCreateResponseMessage) {
                                 GroupCreateResponseMessage groupCreateResponseMessage = (GroupCreateResponseMessage) msg;
                                 System.out.println(groupCreateResponseMessage.getReason());
                             }
 
                             //接收群组创建成员消息
-                            if (msg instanceof GroupMembersResponseMessage){
+                            if (msg instanceof GroupMembersResponseMessage) {
                                 GroupMembersResponseMessage groupMembersResponseMessage = (GroupMembersResponseMessage) msg;
-                                System.out.println("该群组包含成员:"+groupMembersResponseMessage.getMembers());
+                                System.out.println("该群组包含成员:" + groupMembersResponseMessage.getMembers());
                             }
 
                             //接收加入群组的消息
-                            if (msg instanceof GroupJoinResponseMessage){
+                            if (msg instanceof GroupJoinResponseMessage) {
                                 GroupJoinResponseMessage joinResponseMessage = (GroupJoinResponseMessage) msg;
                                 System.out.println(joinResponseMessage.getReason());
                             }
 
                             //处理群发消息
-                            if (msg instanceof GroupChatResponseMessage){
+                            if (msg instanceof GroupChatResponseMessage) {
                                 GroupChatResponseMessage groupChatResponseMessage = (GroupChatResponseMessage) msg;
-                                if (groupChatResponseMessage.getContent() == null){
+                                if (groupChatResponseMessage.getContent() == null) {
                                     System.out.println(groupChatResponseMessage.getReason());
-                                }else {
-                                    System.out.println(groupChatResponseMessage.getFrom()+" say: "+groupChatResponseMessage.getContent());
+                                } else {
+                                    System.out.println(groupChatResponseMessage.getFrom() + " say: " + groupChatResponseMessage.getContent());
                                 }
                             }
 
                             //处理退出群组消息
-                            if (msg instanceof GroupQuitResponseMessage){
+                            if (msg instanceof GroupQuitResponseMessage) {
                                 System.out.println(((GroupQuitResponseMessage) msg).getReason());
                             }
                         }
@@ -125,14 +122,14 @@ public class ChatClient {
                                     throw new RuntimeException(e);
                                 }
                                 //登录失败
-                                if (!LOGIN_SUCCESS.get()){
+                                if (!LOGIN_SUCCESS.get()) {
                                     System.out.println("登录失败，请重启程序");
                                     ctx.close();
                                     return;
                                 }
 
                                 CommandFactory commandFactory = CommandFactory.getInstance();
-                                while (true){
+                                while (true) {
                                     System.out.println("==================================");
                                     System.out.println("send [username] [content]");
                                     System.out.println("gsend [group name] [content]");
@@ -145,11 +142,15 @@ public class ChatClient {
                                     System.out.println("请输入操作指令:");
                                     Scanner operation = new Scanner(System.in);
                                     String[] input = operation.nextLine().split(" ");
-                                    Command command = commandFactory.getCommand(input[0]);
-                                    command.execute(ctx,userName,input);
+                                    try {
+                                        Command command  = commandFactory.getCommand(input[0]);
+                                        command.execute(ctx, userName, input);
+                                    } catch (RuntimeException e) {
+                                        System.out.println(e.getMessage());
+                                    }
                                 }
 
-                            },"login").start();
+                            }, "login").start();
                         }
                     });
                 }
@@ -163,9 +164,4 @@ public class ChatClient {
             group.shutdownGracefully();
         }
     }
-
-    private static void quit(ChannelHandlerContext ctx) {
-        ctx.channel().close();
-    }
-
 }

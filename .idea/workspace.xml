@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7293ae97-3c8d-47c6-9676-744088442cbe" name="Changes" comment="" />
+    <list default="true" id="7293ae97-3c8d-47c6-9676-744088442cbe" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/client/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/client/ChatClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/client/command/CommandFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/client/command/CommandFactory.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -134,7 +137,7 @@
       <recent name="com.cn.tw.graduate.bakazhou.Netty.Channel" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ChatClient1">
+  <component name="RunManager" selected="Application.ChatClient">
     <configuration name="ChatClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.cn.tw.graduate.bakazhou.Practice3.client.ChatClient" />
       <module name="JUC.NettyDemo.main" />
@@ -223,7 +226,7 @@
       <workItem from="1663659779184" duration="28249000" />
       <workItem from="1663809770803" duration="6511000" />
       <workItem from="1663816384653" duration="16891000" />
-      <workItem from="1663896741358" duration="1975000" />
+      <workItem from="1663896741358" duration="2484000" />
     </task>
     <task id="LOCAL-00001" summary="feat: project init success">
       <created>1663551542725</created>
@@ -526,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663898718113</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="feat: add QuitCommand">
+      <created>1663898972260</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1663898972260</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -544,7 +554,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add practice server and client" />
     <MESSAGE value="feat: add practice2 server and client" />
     <MESSAGE value="feat: add ShortConnectClient" />
     <MESSAGE value="feat: add FixedLengthClient and FixedLengthServer" />
@@ -569,7 +578,8 @@
     <MESSAGE value="feat: add GmembersCommand" />
     <MESSAGE value="feat: add GjoinCommand" />
     <MESSAGE value="feat: add GquitCommand" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add GquitCommand" />
+    <MESSAGE value="feat: add QuitCommand" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add QuitCommand" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
