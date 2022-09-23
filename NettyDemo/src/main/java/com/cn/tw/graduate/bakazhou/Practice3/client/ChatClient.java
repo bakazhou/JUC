@@ -1,6 +1,8 @@
 package com.cn.tw.graduate.bakazhou.Practice3.client;
 
 
+import com.cn.tw.graduate.bakazhou.Practice3.client.command.Command;
+import com.cn.tw.graduate.bakazhou.Practice3.client.command.CommandFactory;
 import com.cn.tw.graduate.bakazhou.Practice3.message.*;
 import com.cn.tw.graduate.bakazhou.Practice3.protocol.MessageCodec;
 import io.netty.bootstrap.Bootstrap;
@@ -128,6 +130,8 @@ public class ChatClient {
                                     ctx.close();
                                     return;
                                 }
+
+                                CommandFactory commandFactory = CommandFactory.getInstance();
                                 while (true){
                                     System.out.println("==================================");
                                     System.out.println("send [username] [content]");
@@ -141,29 +145,8 @@ public class ChatClient {
                                     System.out.println("请输入操作指令:");
                                     Scanner operation = new Scanner(System.in);
                                     String[] input = operation.nextLine().split(" ");
-                                    switch (input[0]){
-                                        case "send":
-                                            sendChatMessage(ctx, userName, input);
-                                            break;
-                                        case "gsend":
-                                            sendGroupMessage(ctx, userName, input);
-                                            break;
-                                        case "gcreate":
-                                            createGroup(ctx, userName, input);
-                                            break;
-                                        case "gmembers":
-                                            getGroupMembers(ctx, input);
-                                            break;
-                                        case "gjoin":
-                                            joinGroup(ctx, userName, input);
-                                            break;
-                                        case "gquit":
-                                            quitGroup(ctx, userName, input);
-                                            break;
-                                        case "quit":
-                                            quit(ctx);
-                                            return;
-                                    }
+                                    Command command = commandFactory.getCommand(input[0]);
+                                    command.execute(ctx,userName,input);
                                 }
 
                             },"login").start();
@@ -203,11 +186,4 @@ public class ChatClient {
         ctx.writeAndFlush(new GroupCreateRequestMessage(input[1], set));
     }
 
-    private static void sendGroupMessage(ChannelHandlerContext ctx, String userName, String[] input) {
-        ctx.writeAndFlush(new GroupChatRequestMessage(userName, input[1], input[2]));
-    }
-
-    private static void sendChatMessage(ChannelHandlerContext ctx, String userName, String[] input) {
-        ctx.writeAndFlush(new ChatRequestMessage(userName, input[1], input[2]));
-    }
 }
