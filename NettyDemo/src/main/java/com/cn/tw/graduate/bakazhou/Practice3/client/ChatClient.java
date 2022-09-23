@@ -172,8 +172,4 @@ public class ChatClient {
         ctx.writeAndFlush(new GroupQuitRequestMessage(userName, input[1]));
     }
 
-    private static void joinGroup(ChannelHandlerContext ctx, String userName, String[] input) {
-        ctx.writeAndFlush(new GroupJoinRequestMessage(userName, input[1]));
-    }
-
 }
