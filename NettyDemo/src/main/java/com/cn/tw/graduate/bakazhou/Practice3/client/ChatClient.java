@@ -180,5 +180,4 @@ public class ChatClient {
         ctx.writeAndFlush(new GroupMembersRequestMessage(input[1]));
     }
 
-
 }
