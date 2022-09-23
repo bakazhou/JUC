@@ -94,6 +94,11 @@ public class ChatClient {
                                     System.out.println(groupChatResponseMessage.getFrom()+" say: "+groupChatResponseMessage.getContent());
                                 }
                             }
+
+                            //处理退出群组消息
+                            if (msg instanceof GroupQuitResponseMessage){
+                                System.out.println(((GroupQuitResponseMessage) msg).getReason());
+                            }
                         }
 
                         @Override

@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7293ae97-3c8d-47c6-9676-744088442cbe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/handler/GroupChatRequestMessageHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/handler/GroupQuitRequestMessageHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/client/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/client/ChatClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/message/GroupChatRequestMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/message/GroupChatRequestMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/message/GroupChatResponseMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/message/GroupChatResponseMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/message/GroupQuitRequestMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/message/GroupQuitRequestMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/ChatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/ChatServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/handler/GroupCreateRequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/NettyDemo/src/main/java/com/cn/tw/graduate/bakazhou/Practice3/server/handler/GroupCreateRequestHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +228,7 @@
       <workItem from="1663637188099" duration="14748000" />
       <workItem from="1663659779184" duration="28249000" />
       <workItem from="1663809770803" duration="6511000" />
-      <workItem from="1663816384653" duration="15588000" />
+      <workItem from="1663816384653" duration="16891000" />
     </task>
     <task id="LOCAL-00001" summary="feat: project init success">
       <created>1663551542725</created>
@@ -477,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663836274197</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="feat: completed gsend">
+      <created>1663839611013</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1663839611013</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -514,13 +519,13 @@
     <MESSAGE value="feat: add server module" />
     <MESSAGE value="feat: completed ChatClient" />
     <MESSAGE value="feat: completed send" />
-    <MESSAGE value="feat: completed gsend" />
     <MESSAGE value="feat: completed chat" />
     <MESSAGE value="feat: add GroupCreateRequestHandle" />
     <MESSAGE value="feat: completed gcreate" />
     <MESSAGE value="feat: completed gmembers" />
     <MESSAGE value="feat: completed gjoin" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: completed gjoin" />
+    <MESSAGE value="feat: completed gsend" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: completed gsend" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
