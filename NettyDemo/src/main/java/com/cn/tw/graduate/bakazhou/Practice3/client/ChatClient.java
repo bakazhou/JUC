@@ -168,8 +168,4 @@ public class ChatClient {
         ctx.channel().close();
     }
 
-    private static void quitGroup(ChannelHandlerContext ctx, String userName, String[] input) {
-        ctx.writeAndFlush(new GroupQuitRequestMessage(userName, input[1]));
-    }
-
 }
